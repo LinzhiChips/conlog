@@ -1,0 +1,23 @@
+conlog - Console logger
+=======================
+
+Copyright (C) 2022 Linzhi Ltd.
+
+This work is licensed under the terms of the MIT License.
+A copy of the license can be found in the file COPYING.txt
+
+
+conlog is a simple logger, inspired by "script". It differs from "script" by
+not using ptys (so it doesn't work with programs that expect a tty, e.g., an
+interactive shell).
+
+It differs from "tee" by keeping standard output and error separate (but
+logging to the same file), and by optionally cutting off logs that get too
+long.
+
+Usage:
+
+conlog [-o bytes[k|M]] logfile command ...
+
+If the command contains options, add a "--" argument before the command, to
+prevent conlog from trying to parse these options itself.
