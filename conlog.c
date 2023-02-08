@@ -152,7 +152,7 @@ static int run(const char *log, off_t limit, char **argv)
 		exit(1);
 	}
 
-	fd = open(log, O_CREAT | O_TRUNC | O_WRONLY);
+	fd = open(log, O_CREAT | O_TRUNC | O_WRONLY, 0666);
 	if (fd < 0) {
 		perror(log);
 		exit(1);
